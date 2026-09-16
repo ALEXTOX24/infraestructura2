@@ -1,0 +1,12 @@
+services:
+  app:
+    build:
+      context: .
+      target: production
+    image: multistage-app:prod
+    container_name: multistage-app
+    ports:
+      - "3000:3000"
+    environment:
+      - APP_VERSION=2.0
+    restart: unless-stopped
